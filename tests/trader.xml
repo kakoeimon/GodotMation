@@ -1,0 +1,16 @@
+<graph version="v4.05" name="Stopping Mechanism in Power Grid" author="Adams &amp; Dormans" interval="1" timeMode="synchronous" distributionMode="instantaneous" speed="100" actions="1" dice="D6" skill="" strategy="" multiplayer="" width="600" height="566" numberOfRuns="0" visibleRuns="0" colorCoding="1">
+  <node symbol="Pool" x="520" y="148" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <node symbol="Converter" x="328" y="160" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <connection type="Resource Connection" start="1" end="0" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="6" end="1" label="2" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Source" x="120" y="332" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <connection type="Resource Connection" start="4" end="6" label="1" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="120" y="160" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="push any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <node symbol="Pool" x="463" y="292" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="push any" actions="1" resourceColor="Black" startingResources="20" capacity="-1" displayCapacity="0"/>
+  <connection type="Resource Connection" start="7" end="9" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="462" y="432" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1" displayCapacity="-1"/>
+  <node symbol="Pool" x="256" y="280" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="push any" actions="1" resourceColor="Black" startingResources="10" capacity="-1" displayCapacity="-1"/>
+  <connection type="Resource Connection" start="10" end="12" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="266" y="440" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1" displayCapacity="-1"/>
+  <connection type="State Connection" start="6" end="12" label="*" position="0.5" color="Black" thickness="2"/>
+</graph>

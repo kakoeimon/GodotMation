@@ -1,0 +1,9 @@
+<graph version="v4.05" name="" author="" interval="1" timeMode="asynchronous" distributionMode="instantaneous" speed="100" actions="1" dice="D6" skill="" strategy="" multiplayer="" width="600" height="560" numberOfRuns="100" visibleRuns="25" colorCoding="0">
+  <connection type="Resource Connection" start="2" end="3" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="179" y="190" color="Black" caption="Start_1" thickness="2" captionPos="0.25" activationMode="passive" pullMode="push any" actions="1" resourceColor="Black" startingResources="11" capacity="-1" displayCapacity="-1"/>
+  <node symbol="Pool" x="171" y="338" color="Black" caption="Start_2" thickness="2" captionPos="0.25" activationMode="passive" pullMode="push any" actions="1" resourceColor="Black" startingResources="9" capacity="-1" displayCapacity="-1"/>
+  <node symbol="Pool" x="383" y="320" color="Black" caption="End_2" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1" displayCapacity="-1"/>
+  <connection type="Resource Connection" start="1" end="6" label="2" position="0.5" color="Black" thickness="2"/>
+  <connection type="State Connection" start="3" end="1" label="==3" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="451" y="192" color="Black" caption="End_1" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1" displayCapacity="-1"/>
+</graph>
