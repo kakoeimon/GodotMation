@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/kakoeimon.godotmation/nodes/end_condition.gd" type="Script" id=1]
+
+[node name="end_condition" type="Node"]
+
+script = ExtResource( 1 )
+caption = null
+color = null
+actions = null
+activation_mode = null
+pull_mode = null
+resource_color = null
+caption_pos = null
+thickness = null
+position = null
+
+

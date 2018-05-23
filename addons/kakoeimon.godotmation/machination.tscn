@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/kakoeimon.godotmation/machination.gd" type="Script" id=1]
+
+
+
+[node name="Node" type="Node" index="0"]
+
+script = ExtResource( 1 )
+xml = null
+json = null
+time_mode = null
+interval = null
+actions = null
+distribution = null
+color_coding = null
+dice = "D6"
+skill = null
+multiplayer = null
+strategy = null
+interactive_nodes_indices = [  ]
+automatic_nodes_indices = [  ]
+starting_nodes_indices = [  ]
+states_indices = [  ]
+dice_standard = null
+dice_random = null
+
+

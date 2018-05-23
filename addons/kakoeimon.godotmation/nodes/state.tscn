@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/kakoeimon.godotmation/nodes/state.gd" type="Script" id=1]
+
+[node name="state" type="Node"]
+
+script = ExtResource( 1 )
+color = null
+label = "+1"
+end = null
+start = null
+points = [  ]
+state_type = 0
+number = 1
+other_number = 0
+thickness = null
+
+

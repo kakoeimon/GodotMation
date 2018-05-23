@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/kakoeimon.godotmation/nodes/pool.gd" type="Script" id=1]
+
+[node name="pool" type="Node"]
+
+script = ExtResource( 1 )
+caption = null
+color = null
+actions = null
+activation_mode = null
+pull_mode = null
+resource_color = null
+starting_resources = null
+number = null
+capacity = null
+caption_pos = null
+thickness = null
+position = null
+emit_state_changed = true
+active = true
+
+
