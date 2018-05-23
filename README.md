@@ -50,4 +50,10 @@ Left mouse button is for selecting and placement of nodes and connections.
 Right mouse button is used to pan the view.
 Mouse wheel is used to zoom in zoom out from the diagram.
 
+If you give an node a caption then the name of the child node under the GodotMation node will try to get this name. This way you can have access to the nodes and retrive their values or change them manualy. You can also use the emit siganl of the pools to connect functions that will give the values of the pool to your game object. You can also use the function of the nodes "change_input_state(value)" to add resources to your nodes or to connect the values of your game object with those of the godotmation nodes.
+
+Please create an issue if something is not clear or if you think that a future is required.
+
+Thanks.
+
 
