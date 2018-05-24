@@ -10,13 +10,13 @@ static func parse_xml(path):
 	var xml = file.get_as_text()
 	file.close()
 	xml = xml.replace("&lt;", "<")
-	file.open("tmp.xml", File.WRITE)
+	file.open("res://addons/kakoeimon.godotmation/tmp.xml", File.WRITE)
 	file.store_string(xml)
 	file.close()
 
 	######### Now lets Parse
 	var parser = XMLParser.new()
-	parser.open("tmp.xml")
+	parser.open("res://addons/kakoeimon.godotmation/tmp.xml")
 	parser.read()
 	dict = attributes_to_dict(parser)
 	dict["nodes"] = []
