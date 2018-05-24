@@ -17,6 +17,7 @@ resource_color = 0
 starting_resources = 0
 number = 0
 capacity = -1
+emit_state_changed = false
 
 [node name="Number" type="Label" parent="." index="0"]
 

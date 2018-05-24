@@ -1,17 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/kakoeimon.godotmation/godotmation.gd" type="Script" id=1]
 [ext_resource path="res://addons/kakoeimon.godotmation/godotmation.png" type="Texture" id=2]
 [ext_resource path="res://addons/kakoeimon.godotmation/nodes/source.tscn" type="PackedScene" id=3]
-[ext_resource path="res://addons/kakoeimon.godotmation/nodes/source.gd" type="Script" id=4]
-[ext_resource path="res://addons/kakoeimon.godotmation/nodes/resource.tscn" type="PackedScene" id=5]
-[ext_resource path="res://addons/kakoeimon.godotmation/nodes/resource.gd" type="Script" id=6]
-[ext_resource path="res://addons/kakoeimon.godotmation/nodes/pool.tscn" type="PackedScene" id=7]
-[ext_resource path="res://addons/kakoeimon.godotmation/nodes/pool.gd" type="Script" id=8]
-[ext_resource path="res://addons/kakoeimon.godotmation/nodes/gate.tscn" type="PackedScene" id=9]
-[ext_resource path="res://addons/kakoeimon.godotmation/nodes/gate.gd" type="Script" id=10]
+[ext_resource path="res://addons/kakoeimon.godotmation/nodes/resource.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/kakoeimon.godotmation/nodes/pool.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/kakoeimon.godotmation/nodes/gate.tscn" type="PackedScene" id=6]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="GodotMation" type="Node" parent="." index="0"]
 
@@ -36,102 +32,64 @@ number_of_runs = 100
 visible_runs = 25
 speed = 100
 
-[node name="source" type="Node" parent="GodotMation" index="0" instance=ExtResource( 3 )]
+[node name="source" parent="GodotMation" index="0" instance=ExtResource( 3 )]
 
-script = ExtResource( 4 )
 caption = ""
 color = 0
 actions = 1
 activation_mode = 2
 pull_mode = 0
-resource_color = null
 caption_pos = 0.25
 thickness = 2
 position = Vector2( 59, 346 )
 
-[node name="resource" type="Node" parent="GodotMation" index="1" instance=ExtResource( 5 )]
+[node name="resource" parent="GodotMation" index="1" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = ""
 end = 6
 start = 0
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="resource2" type="Node" parent="GodotMation" index="2" instance=ExtResource( 5 )]
+[node name="resource2" parent="GodotMation" index="2" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = "5"
 end = 7
 start = 6
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="resource3" type="Node" parent="GodotMation" index="3" instance=ExtResource( 5 )]
+[node name="resource3" parent="GodotMation" index="3" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = "1"
 end = 8
 start = 7
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="resource4" type="Node" parent="GodotMation" index="4" instance=ExtResource( 5 )]
+[node name="resource4" parent="GodotMation" index="4" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = "2"
 end = 9
 start = 7
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="resource5" type="Node" parent="GodotMation" index="5" instance=ExtResource( 5 )]
+[node name="resource5" parent="GodotMation" index="5" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = "3"
 end = 10
 start = 7
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="pool" type="Node" parent="GodotMation" index="6" instance=ExtResource( 7 )]
+[node name="pool" parent="GodotMation" index="6" instance=ExtResource( 5 )]
 
-script = ExtResource( 8 )
 caption = ""
 color = 0
 actions = 1
@@ -145,29 +103,21 @@ caption_pos = 0.25
 thickness = 2
 position = Vector2( 66, 167 )
 emit_state_changed = false
-active = true
 
-[node name="gate" type="Node" parent="GodotMation" index="7" instance=ExtResource( 9 )]
+[node name="gate" parent="GodotMation" index="7" instance=ExtResource( 6 )]
 
-script = ExtResource( 10 )
 caption = ""
 color = 0
 actions = 1
 activation_mode = 2
 pull_mode = 0
-resource_color = null
-starting_resources = null
-number = 0
-capacity = null
 caption_pos = 0.25
 thickness = 2
 position = Vector2( 184, 160 )
 gate_type = 0
-active = true
 
-[node name="pool2" type="Node" parent="GodotMation" index="8" instance=ExtResource( 7 )]
+[node name="pool2" parent="GodotMation" index="8" instance=ExtResource( 5 )]
 
-script = ExtResource( 8 )
 caption = ""
 color = 0
 actions = 1
@@ -181,11 +131,9 @@ caption_pos = 0.25
 thickness = 2
 position = Vector2( 367, 27 )
 emit_state_changed = false
-active = true
 
-[node name="pool3" type="Node" parent="GodotMation" index="9" instance=ExtResource( 7 )]
+[node name="pool3" parent="GodotMation" index="9" instance=ExtResource( 5 )]
 
-script = ExtResource( 8 )
 caption = ""
 color = 0
 actions = 1
@@ -199,11 +147,9 @@ caption_pos = 0.25
 thickness = 2
 position = Vector2( 371, 76 )
 emit_state_changed = false
-active = true
 
-[node name="pool4" type="Node" parent="GodotMation" index="10" instance=ExtResource( 7 )]
+[node name="pool4" parent="GodotMation" index="10" instance=ExtResource( 5 )]
 
-script = ExtResource( 8 )
 caption = ""
 color = 0
 actions = 1
@@ -217,11 +163,9 @@ caption_pos = 0.25
 thickness = 2
 position = Vector2( 371, 130 )
 emit_state_changed = false
-active = true
 
-[node name="pool5" type="Node" parent="GodotMation" index="11" instance=ExtResource( 7 )]
+[node name="pool5" parent="GodotMation" index="11" instance=ExtResource( 5 )]
 
-script = ExtResource( 8 )
 caption = ""
 color = 0
 actions = 1
@@ -235,11 +179,9 @@ caption_pos = 0.25
 thickness = 2
 position = Vector2( 369, 290 )
 emit_state_changed = false
-active = true
 
-[node name="pool6" type="Node" parent="GodotMation" index="12" instance=ExtResource( 7 )]
+[node name="pool6" parent="GodotMation" index="12" instance=ExtResource( 5 )]
 
-script = ExtResource( 8 )
 caption = ""
 color = 0
 actions = 1
@@ -253,11 +195,9 @@ caption_pos = 0.25
 thickness = 2
 position = Vector2( 371, 343 )
 emit_state_changed = false
-active = true
 
-[node name="pool7" type="Node" parent="GodotMation" index="13" instance=ExtResource( 7 )]
+[node name="pool7" parent="GodotMation" index="13" instance=ExtResource( 5 )]
 
-script = ExtResource( 8 )
 caption = ""
 color = 0
 actions = 1
@@ -271,11 +211,9 @@ caption_pos = 0.25
 thickness = 2
 position = Vector2( 370, 400 )
 emit_state_changed = false
-active = true
 
-[node name="pool8" type="Node" parent="GodotMation" index="14" instance=ExtResource( 7 )]
+[node name="pool8" parent="GodotMation" index="14" instance=ExtResource( 5 )]
 
-script = ExtResource( 8 )
 caption = ""
 color = 0
 actions = 1
@@ -289,11 +227,9 @@ caption_pos = 0.25
 thickness = 2
 position = Vector2( 369, 457 )
 emit_state_changed = false
-active = true
 
-[node name="pool9" type="Node" parent="GodotMation" index="15" instance=ExtResource( 7 )]
+[node name="pool9" parent="GodotMation" index="15" instance=ExtResource( 5 )]
 
-script = ExtResource( 8 )
 caption = ""
 color = 0
 actions = 1
@@ -307,123 +243,72 @@ caption_pos = 0.25
 thickness = 2
 position = Vector2( 372, 523 )
 emit_state_changed = false
-active = true
 
-[node name="resource6" type="Node" parent="GodotMation" index="16" instance=ExtResource( 5 )]
+[node name="resource6" parent="GodotMation" index="16" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = "4"
 end = 23
 start = 7
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="resource7" type="Node" parent="GodotMation" index="17" instance=ExtResource( 5 )]
+[node name="resource7" parent="GodotMation" index="17" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = "5"
 end = 24
 start = 7
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="resource8" type="Node" parent="GodotMation" index="18" instance=ExtResource( 5 )]
+[node name="resource8" parent="GodotMation" index="18" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = "6"
 end = 11
 start = 7
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="resource9" type="Node" parent="GodotMation" index="19" instance=ExtResource( 5 )]
+[node name="resource9" parent="GodotMation" index="19" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = "7"
 end = 12
 start = 7
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="resource10" type="Node" parent="GodotMation" index="20" instance=ExtResource( 5 )]
+[node name="resource10" parent="GodotMation" index="20" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = "8"
 end = 13
 start = 7
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="resource11" type="Node" parent="GodotMation" index="21" instance=ExtResource( 5 )]
+[node name="resource11" parent="GodotMation" index="21" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = "9"
 end = 14
 start = 7
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="resource12" type="Node" parent="GodotMation" index="22" instance=ExtResource( 5 )]
+[node name="resource12" parent="GodotMation" index="22" instance=ExtResource( 4 )]
 
-script = ExtResource( 6 )
 color = 0
 label = "10"
 end = 15
 start = 7
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = [  ]
-resource_type = 0
-number = 0
 thickness = 2
 
-[node name="pool10" type="Node" parent="GodotMation" index="23" instance=ExtResource( 7 )]
+[node name="pool10" parent="GodotMation" index="23" instance=ExtResource( 5 )]
 
-script = ExtResource( 8 )
 caption = ""
 color = 0
 actions = 1
@@ -437,11 +322,9 @@ caption_pos = 0.25
 thickness = 2
 position = Vector2( 372, 181 )
 emit_state_changed = false
-active = true
 
-[node name="pool11" type="Node" parent="GodotMation" index="24" instance=ExtResource( 7 )]
+[node name="pool11" parent="GodotMation" index="24" instance=ExtResource( 5 )]
 
-script = ExtResource( 8 )
 caption = ""
 color = 0
 actions = 1
@@ -455,6 +338,5 @@ caption_pos = 0.25
 thickness = 2
 position = Vector2( 370, 235 )
 emit_state_changed = false
-active = true
 
 

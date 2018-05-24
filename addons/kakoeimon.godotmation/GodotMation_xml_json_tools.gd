@@ -133,7 +133,7 @@ static func _build_from_dict(base, dict, in_editor = false, owner = false):
 	var converter_pck = preload("nodes/converter.tscn")
 	var delay_pck = preload("nodes/delay.tscn")
 	var end_condition_pck = preload("nodes/end_condition.tscn")
-	
+	var function_call_pck = preload("nodes/function_call.tscn")
 	
 	
 	if in_editor:
@@ -147,6 +147,7 @@ static func _build_from_dict(base, dict, in_editor = false, owner = false):
 		converter_pck = load("res://addons/kakoeimon.godotmation/editor_nodes/editor_converter.tscn")
 		delay_pck = load("res://addons/kakoeimon.godotmation/editor_nodes/editor_delay.tscn")
 		end_condition_pck = load("res://addons/kakoeimon.godotmation/editor_nodes/editor_end_condition.tscn")
+		function_call_pck = load("res://addons/kakoeimon.godotmation/editor_nodes/editor_function_call.tscn")
 	else:
 		nodes_container = base
 	
@@ -206,6 +207,8 @@ static func _build_from_dict(base, dict, in_editor = false, owner = false):
 				8:
 					child = end_condition_pck.instance()
 					child.signaller = node.signaller
+				9:
+					child = function_call_pck.instance()
 				_:
 					print("NOT IN MATCH " + str(node.type))
 

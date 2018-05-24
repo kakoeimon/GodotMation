@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/kakoeimon.godotmation/GodotMation_Edit.gd" type="Script" id=1]
 [ext_resource path="res://addons/kakoeimon.godotmation/button_draw/CursorButton.gd" type="Script" id=2]
@@ -14,7 +14,8 @@
 [ext_resource path="res://addons/kakoeimon.godotmation/button_draw/ConvertButton.gd" type="Script" id=12]
 [ext_resource path="res://addons/kakoeimon.godotmation/button_draw/DelayButton.gd" type="Script" id=13]
 [ext_resource path="res://addons/kakoeimon.godotmation/button_draw/EndConditionButton.gd" type="Script" id=14]
-[ext_resource path="res://addons/kakoeimon.godotmation/DrawingArea.gd" type="Script" id=15]
+[ext_resource path="res://addons/kakoeimon.godotmation/button_draw/FunctionCallButton.gd" type="Script" id=15]
+[ext_resource path="res://addons/kakoeimon.godotmation/DrawingArea.gd" type="Script" id=16]
 
 [node name="GodotMation_Edit" type="Control" index="0"]
 
@@ -607,6 +608,33 @@ group = null
 flat = false
 align = 1
 script = ExtResource( 14 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="FunctionCall" type="Button" parent="Panel/DrawPanel/GridContainer" index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 240.0
+margin_right = 156.0
+margin_bottom = 316.0
+rect_min_size = Vector2( 76, 76 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+script = ExtResource( 15 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="Delete_Button" type="Button" parent="Panel/DrawPanel" index="1"]
@@ -1856,7 +1884,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Grow Direction", "Margin", "Mouse", "Rect", "Scroll", "Size Flags" ]
 
 [node name="Nodes" type="Node2D" parent="DrawingArea" index="0"]
@@ -1896,6 +1924,8 @@ _sections_unfolded = [ "Mouse", "Rect", "Size Flags", "Transform" ]
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/Delay" to="DrawingArea" method="_on_Delay_pressed"]
 
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/EndConditionButton" to="DrawingArea" method="_on_EndConditionButton_pressed"]
+
+[connection signal="pressed" from="Panel/DrawPanel/GridContainer/FunctionCall" to="DrawingArea" method="_on_FunctionCall_pressed"]
 
 [connection signal="pressed" from="Panel/DrawPanel/Delete_Button" to="DrawingArea" method="_on_Delete_Button_pressed"]
 

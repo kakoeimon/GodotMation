@@ -78,7 +78,7 @@ func _process(delta):
 		for i in range(drawing_area_nodes.get_child_count()):
 			var c1 = drawing_area_nodes.get_child(i)
 			var c2 = godotmation.get_child(i)
-			if c1.type == 2:
+			if c1.type == 2 or c1.type == 9:
 				c1.get_node("Number").text = str(c2.number)
 			elif c1.type == 0 and c2 and c2.type <=1:
 				c1.get_node("Label").text = c2.get_label()
@@ -311,6 +311,8 @@ func _on_StopButton_pressed():
 	for n in drawing_area_nodes.get_children():
 		if n.type == 2:
 			n.get_node("Number").text = str(n.starting_resources)
+		if n.type == 9:
+			n.get_node("Number").text = ""
 		elif n.type <= 1:
 			n.get_node("Label").text = n.label
 	for c in $play_godotmation.get_children():

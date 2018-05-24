@@ -237,6 +237,8 @@ func _on_DrawingArea_gui_input(event):
 						node = preload("editor_nodes/editor_end_condition.tscn").instance()
 					elif button_type == 8:
 						node = preload("editor_nodes/editor_delay.tscn").instance()
+					elif button_type == 9:
+						node = preload("editor_nodes/editor_function_call.tscn").instance()
 					
 					node.position = event_position
 					nodes_container.add_child(node)
@@ -385,6 +387,18 @@ func _on_Delay_pressed():
 				button_type = -1
 	pass # replace with function body
 
+func _on_FunctionCall_pressed():
+	for b in buttons.get_children():
+		if b.name != "FunctionCall":
+			b.pressed = false
+		else:
+			if b.pressed:
+				button_type = 9
+			else:
+				button_type = -1
+	pass # replace with function body
+	pass # replace with function body
+
 
 func _on_Delete_Button_pressed():
 	var to_delete = selected
@@ -404,5 +418,7 @@ func _on_Delete_Button_pressed():
 
 func update():
 	.update()
+
+
 
 
