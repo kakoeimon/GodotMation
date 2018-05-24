@@ -225,3 +225,8 @@ func get_dict():
 	dict.emit_state_changed = emit_state_changed
 	
 	return dict
+
+#This function is to be used by external code.
+#For example to change the number of the pool to much an arg of a connected signal to the pool
+func force_number(value):
+	number = value
