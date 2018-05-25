@@ -664,7 +664,6 @@ align = 1
 
 [node name="Nodes" type="VBoxContainer" parent="Panel" index="5"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1487,7 +1486,6 @@ caret_position = 0
 
 [node name="Main" type="VBoxContainer" parent="Panel" index="7"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1518,6 +1516,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="Label" type="Label" parent="Panel/Main/Author" index="0"]
 
@@ -1538,6 +1537,7 @@ text = "Author :"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="Author_LineEdit" type="LineEdit" parent="Panel/Main/Author" index="1"]
 
@@ -1929,7 +1929,7 @@ _sections_unfolded = [ "Mouse", "Rect", "Size Flags", "Transform" ]
 
 [connection signal="pressed" from="Panel/DrawPanel/Delete_Button" to="DrawingArea" method="_on_Delete_Button_pressed"]
 
-[connection signal="text_changed" from="Panel/Nodes/Caption/Caption_LineEdit" to="." method="_on_Caption_LineEdit_text_changed"]
+[connection signal="text_entered" from="Panel/Nodes/Caption/Caption_LineEdit" to="." method="_on_Caption_LineEdit_text_entered"]
 
 [connection signal="value_changed" from="Panel/Nodes/Number/Number_SpinBox" to="." method="_on_Number_SpinBox_value_changed"]
 

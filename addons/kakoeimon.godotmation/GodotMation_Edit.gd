@@ -322,10 +322,16 @@ func _on_StopButton_pressed():
 
 
 
-func _on_Caption_LineEdit_text_changed(new_text):
+func _on_Caption_LineEdit_text_entered(new_text):
 	var selected = drawing_area.selected
 	if selected:
-		selected.set_caption(new_text)
+		if selected.type == 9:
+			if selected_godotmation and selected_godotmation.get_parent().has_method(new_text):
+				selected.set_caption(new_text)
+			else:
+				selected.set_caption("")
+		else:
+			selected.set_caption(new_text)
 		selected.update()
 	pass # replace with function body
 
@@ -392,6 +398,10 @@ func _on_Multiplayer_LineEdit_text_changed(new_text):
 
 func _on_Strategy_LineEdit_text_changed(new_text):
 	strategy = new_text
+
+
+
+
 
 
 

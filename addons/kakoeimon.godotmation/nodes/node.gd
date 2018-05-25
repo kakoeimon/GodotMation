@@ -121,8 +121,6 @@ func apply_state():
 	if output_number or input_number:
 		number += output_number + input_number
 		
-		if emit_state_changed: emit_signal("state_changed" , number)
-		
 		output_number = 0
 		input_number = 0
 	#active is setted here as true and this may change by the input_conditional_states

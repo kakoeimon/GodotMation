@@ -80,3 +80,18 @@ func apply_state():
 	else:
 		number = 0
 
+func get_dict():
+	var dict = {}
+	dict.type = type
+	dict.caption = caption
+	dict.color = color
+	dict.actions = actions
+	dict.activation_mode = activation_mode
+	dict.pull_mode = pull_mode
+	dict.resource_color = resource_color
+	dict.caption_pos = caption_pos
+	dict.thickness = thickness
+	dict.x = position.x
+	dict.y = position.y
+	
+	return dict
