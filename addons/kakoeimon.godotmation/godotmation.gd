@@ -19,6 +19,7 @@ export(int) var width = 600
 export(int) var number_of_runs = 100
 export(int) var visible_runs = 100
 export(int) var speed = 1
+export(bool) var autostart = true
 
 var nodes = [] #All the nodes, no connections. This is for state change
 var interactive_nodes = []
@@ -41,7 +42,8 @@ var reverse_order = false
 func _ready():
 	if not Engine.is_editor_hint():
 		setup()
-		_start()
+		if autostart:
+			_start()
 
 func setup():
 	var parent = get_parent()
@@ -168,6 +170,7 @@ func get_dict():
 	dict.number_of_runs = number_of_runs
 	dict.visible_runs = visible_runs
 	dict.speed = speed
+	dict.autostart = autostart
 	
 	dict.nodes = []
 	

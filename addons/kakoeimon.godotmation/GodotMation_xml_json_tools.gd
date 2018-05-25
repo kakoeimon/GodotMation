@@ -177,7 +177,12 @@ static func _build_from_dict(base, dict, in_editor = false, owner = false):
 	base.number_of_runs = dict.number_of_runs
 	base.visible_runs = dict.visible_runs
 	base.speed = dict.speed
-
+	
+	if dict.has("autostart"):
+		base.autostart = dict.autostart
+	else:
+		base.autostart = true
+	
 	var resources = []
 	var states = []
 	

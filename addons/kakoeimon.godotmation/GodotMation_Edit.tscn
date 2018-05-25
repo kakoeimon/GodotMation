@@ -49,6 +49,7 @@ width = null
 height = null
 number_of_runs = null
 visible_runs = null
+autostart = true
 
 [node name="LoadFileDialog" type="FileDialog" parent="." index="0"]
 
@@ -232,6 +233,7 @@ align = 1
 
 [node name="DrawPanel" type="Panel" parent="Panel" index="4"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -664,6 +666,7 @@ align = 1
 
 [node name="Nodes" type="VBoxContainer" parent="Panel" index="5"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1615,7 +1618,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-min_value = 0.01
+min_value = 0.016
 max_value = 100.0
 step = 0.1
 page = 0.0
@@ -1866,6 +1869,66 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
 
+[node name="AutoStart" type="Control" parent="Panel/Main" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 156.0
+margin_right = 40.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Label" type="Label" parent="Panel/Main/AutoStart" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 5.0
+margin_right = 71.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Auto Start :"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="AutoStart_CheckBox" type="CheckBox" parent="Panel/Main/AutoStart" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_right = 157.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 0
+_sections_unfolded = [ "Grow Direction" ]
+
 [node name="DrawingArea" type="Control" parent="." index="3"]
 
 editor/display_folded = true
@@ -1952,6 +2015,8 @@ _sections_unfolded = [ "Mouse", "Rect", "Size Flags", "Transform" ]
 [connection signal="text_changed" from="Panel/Main/Multiplayer/Multiplayer_LineEdit" to="." method="_on_Multiplayer_LineEdit_text_changed"]
 
 [connection signal="text_changed" from="Panel/Main/Strategy/Strategy_LineEdit" to="." method="_on_Strategy_LineEdit_text_changed"]
+
+[connection signal="toggled" from="Panel/Main/AutoStart/AutoStart_CheckBox" to="." method="_on_AutoStart_CheckBox_toggled"]
 
 [connection signal="gui_input" from="DrawingArea" to="DrawingArea" method="_on_DrawingArea_gui_input"]
 

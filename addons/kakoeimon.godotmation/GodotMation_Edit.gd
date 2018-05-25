@@ -26,6 +26,8 @@ export(int) var height
 
 export(int) var number_of_runs
 export(int) var visible_runs
+
+export(bool) var autostart = true
 const tools = preload("GodotMation_xml_json_tools.gd")
 
 var nodes = []
@@ -65,7 +67,7 @@ func _ready():
 	_add_activation_mode_menu()
 	_add_gate_type_mode_menu()
 	
-	#_set_main_menu()
+	_set_main_menu()
 	connect("resized", self, "_resized")
 	pass
 
@@ -229,6 +231,7 @@ func _get_dict():
 	dict["number_of_runs"] = number_of_runs
 	dict["visible_runs"] = visible_runs
 	dict["color_coding"] = false
+	dict["autostart"] = autostart
 	
 	dict["nodes"] = []
 	
@@ -246,6 +249,7 @@ func _set_main_menu():
 	$Panel/Main/Skill/Skill_LineEdit.text = skill
 	$Panel/Main/Multiplayer/Multiplayer_LineEdit.text = multiplayer_skill
 	$Panel/Main/Strategy/Strategy_LineEdit.text = strategy
+	$Panel/Main/AutoStart/AutoStart_CheckBox.pressed = autostart
 
 func _set_node_tab(selected):
 	if selected.type >= 2:
@@ -399,10 +403,7 @@ func _on_Multiplayer_LineEdit_text_changed(new_text):
 func _on_Strategy_LineEdit_text_changed(new_text):
 	strategy = new_text
 
-
-
-
-
-
+func _on_AutoStart_CheckBox_toggled(button_pressed):
+	autostart = button_pressed
 
 
