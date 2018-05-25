@@ -20,6 +20,8 @@ var output_resources = []
 var input_states = []
 var output_states = []
 
+var input_conditional_states = []
+
 var start_node
 var end_node
 export(Array, Vector2) var points
@@ -88,7 +90,11 @@ func change_input_state(value, state_type = 0):
 
 func apply_state():
 	used = false
-	get_number()
+	active = true
+	for s in input_conditional_states:
+		s.trigger()
+	if active:
+		get_number()
 	
 func set_number(value):
 	number = value

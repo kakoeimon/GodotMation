@@ -117,6 +117,8 @@ func _start():
 		n.apply_state()
 	for r in resources:
 		r.apply_state()
+	for s in states:
+		s.apply_state()
 	for node in on_start_nodes:
 		node.trigger()
 	_interval_timeout()
@@ -145,6 +147,9 @@ func _interval_timeout():
 		
 	for r in resources:
 		r.apply_state()
+		
+	for s in states:
+		s.apply_state()
 		
 
 func _clear():

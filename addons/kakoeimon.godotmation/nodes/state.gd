@@ -16,6 +16,8 @@ var output_resources = []
 var input_states = []
 var output_states = []
 
+var input_conditional_states = []
+
 var start_node
 var end_node
 
@@ -25,9 +27,11 @@ export(int) var other_number = 0
 
 export(int) var thickness
 
+var active = true
 
 
 func trigger(value = 0):
+	if not active: return
 	if state_type > 8: return
 	if state_type == 0:
 		end_node.change_input_state(number * value) #0 for simple numbers
@@ -60,6 +64,12 @@ func trigger(value = 0):
 func change_state(value):
 	number += value
 	
+
+func apply_state():
+	active = true
+	for s in input_conditional_states:
+		s.trigger()
+
 
 func convert_label():
 	if not label:
