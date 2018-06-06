@@ -36,51 +36,6 @@ class number:
 	func get_type():
 		return type
 
-
-############# PERCENTAGE ###############
-###### Class for percentage values.
-
-class percentage:
-	var type = 1
-
-	var label = ""
-	var standard = 0
-	var chance = 0
-	var number = 0
-	
-	func set_from_string(string):
-		label = string + "%"
-		var length = string.length()
-		var tmp_string = string
-		var tmp_chance = ""
-		number = int(label)
-		set_chance()
-		
-	func get_value():
-		var output = standard
-		if randi()%100 <= chance:
-			output +=1
-		return output
-		
-	func set_chance():
-		standard = int(number / 100)
-		chance = number - standard * 100
-		
-	func add_value(value):
-		number += value
-		set_chance()
-		pass
-		
-	func get_label():
-		return str(number) + "%"
-	
-	func get_type():
-		return type
-		
-	func get_number():
-		return number
-		
-
 ############ DICE ###############
 ######Class for dice values
 ############ it may contain more dices or numbers or percentage

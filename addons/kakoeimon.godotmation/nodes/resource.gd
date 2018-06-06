@@ -26,7 +26,8 @@ var start_node
 var end_node
 export(Array, Vector2) var points
 export(int) var resource_type = 0
-export(int) var number = 0 
+export(int) var number = 0
+export(float) var resource_number = 0.0
 export(int) var thickness
 var object_number_1
 var object_number_2

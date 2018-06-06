@@ -31,6 +31,8 @@ var active = true
 
 var satisfied = true
 
+var pushed = false
+
 func trigger():
 	if not active: return
 	
@@ -51,6 +53,8 @@ func trigger():
 	return
 
 func pull_resources(resource):
+	if not active: return
+	pushed = true
 	if not resource.trigger():
 		satisfied = false
 
@@ -79,6 +83,7 @@ func change_output_state(value):
 	return value
 
 func apply_state():
+	pushed = false
 	satisfied = true
 	active = true
 	for s in input_conditional_states:

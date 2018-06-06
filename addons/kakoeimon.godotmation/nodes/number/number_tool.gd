@@ -7,6 +7,7 @@ static func from_string(string):
 		else:
 			return read_string(label)
 	pass
+	
 
 static func read_string(l):
 	var number = preload("number.gd")
@@ -40,7 +41,8 @@ static func read_string(l):
 					return value
 				elif l[i] == "%":
 					i +=1
-					var value = number.percentage.new()
+					var value = number.number.new()
+					number_string = number_string.left(number_string.length() - 2) + "." + number_string.right(number_string.length() - 2)
 					value.set_from_string(number_string)
 					return value
 				elif l[i] == "D":

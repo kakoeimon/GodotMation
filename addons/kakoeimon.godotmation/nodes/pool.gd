@@ -89,6 +89,8 @@ var satisfied = true
 #of the resource conections acording to the pull mode
 #The push any and push all will call the pull any or pull all acordingly to the node to the end of the connection
 #For this reason avoid the connection of two push nodes.
+
+var pushed = false
 func trigger():
 	if not active: return
 	#var satisfied = true
@@ -136,6 +138,8 @@ func trigger():
 
 
 func pull_resources(resource):
+	if not active: return
+	pushed = true
 	if not resource.trigger():
 		satisfied = false
 
@@ -203,6 +207,7 @@ func apply_state():
 	satisfied = true
 	#active is setted here as true and this may change by the input_conditional_states
 	active = true
+	pushed = false
 	for s in input_conditional_states:
 		s.trigger()
 

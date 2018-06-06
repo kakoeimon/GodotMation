@@ -40,6 +40,8 @@ var resources_line = []
 
 export(bool) var queue = true
 
+var pushed = false
+
 func trigger():
 	if not active: return
 
@@ -66,6 +68,7 @@ func trigger():
 
 func pull_resources(resource):
 	if not active: return
+	pushed = true
 	if not resource.trigger():
 		satisfied = false
 
@@ -133,6 +136,7 @@ func apply_state():
 		if interval_i >= resources_line.size(): interval_i = 0
 		number = resources_line[interval_i]
 		if queue and number > 1: number = 1
+	pushed = false
 	satisfied = true
 	#active is setted here as true and this may change by the input_conditional_states
 	active = true

@@ -60,6 +60,8 @@ func setup():
 			resources.append(node)
 		elif node.type == 1:
 			states.append(node)
+			
+	
 
 		
 	for r in resources:
@@ -140,7 +142,8 @@ func _interval_timeout():
 		reverse_order = true
 	
 	for n in pushed_nodes:
-		n.apply_satisfaction()
+		if n.pushed:
+			n.apply_satisfaction()
 		
 	for n in nodes:
 		n.apply_state()

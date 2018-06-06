@@ -42,7 +42,7 @@ func trigger(value = 0):
 		end_node.change_input_state(number * value, state_type)
 		pass
 	elif state_type == 3: #Probability number with %
-		end_node.change_input_state( number * value, state_type)
+		end_node.change_input_state( number * 0.01 * value)
 		pass
 	elif state_type == 4: #Range number-number
 		if not start_node.get_changed_number() > number and not start_node.get_changed_number() < other_number:
