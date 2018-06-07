@@ -42,6 +42,8 @@ var output_number = 0
 
 var output_i = 0
 
+var pushed = false
+
 func trigger():
 	if not active: return
 	
