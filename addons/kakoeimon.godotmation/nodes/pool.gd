@@ -85,12 +85,16 @@ var wanted_number = 0
 var wanted_input = 0
 
 var satisfied = true
+
+#pushed is used to check if a node had pushed resources to this node. This means that this node was 
+#is the end of a resource connection that have a start node with pull_mode push_any or push all.
+var pushed = false
+
+
 #The trigger method does not need a value, pool node will try to sutisfie the resource flow
 #of the resource conections acording to the pull mode
 #The push any and push all will call the pull any or pull all acordingly to the node to the end of the connection
 #For this reason avoid the connection of two push nodes.
-
-var pushed = false
 func trigger():
 	if not active: return
 	#var satisfied = true
@@ -156,6 +160,7 @@ func apply_satisfaction():
 			r.update_flow()
 		for s in trigger_states:
 			s.end_node.trigger()
+	pushed = false
 	
 
 #can_push is used for checking if a node can push a number of resources.
@@ -207,7 +212,6 @@ func apply_state():
 	satisfied = true
 	#active is setted here as true and this may change by the input_conditional_states
 	active = true
-	pushed = false
 	for s in input_conditional_states:
 		s.trigger()
 

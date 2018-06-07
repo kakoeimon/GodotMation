@@ -71,6 +71,7 @@ func apply_satisfaction():
 			r.update_flow()
 		for s in trigger_states:
 			s.end_node.trigger()
+	pushed = false
 
 func can_push(value):
 	return 0
@@ -83,7 +84,6 @@ func change_output_state(value):
 	return value
 
 func apply_state():
-	pushed = false
 	satisfied = true
 	active = true
 	for s in input_conditional_states:

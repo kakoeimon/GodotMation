@@ -94,6 +94,7 @@ func apply_satisfaction():
 			r.trigger()
 		for s in trigger_states:
 			s.end_node.trigger()
+	pushed = false
 
 func can_push(value):
 	return value
@@ -125,7 +126,6 @@ func apply_state():
 
 		output_number = 0
 		input_number = 0
-	pushed = false
 	satisfied = true
 	#active is setted here as true and this may change by the input_conditional_states
 	active = true
