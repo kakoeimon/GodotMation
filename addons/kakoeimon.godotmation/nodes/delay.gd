@@ -76,20 +76,13 @@ func pull_resources(resource):
 func apply_satisfaction():
 	if output_resources.size():
 		output_resources[0].trigger()
-	for r in input_resources:
-		if not r.used: satisfied = false
-		if not r.satisfied or not r.used:
-			for s in reverse_trigger_states:
-				s.end_node.trigger()
-			break
-	if satisfied:
-		for r in input_resources:
-			r.update_flow()
-		for s in trigger_states:
-			s.end_node.trigger()
+
 	pushed = false
 
 func can_push(value):
+	if number > 0:
+		for s in trigger_states:
+			s.end_node.trigger()
 	return number + output_number
 	
 
@@ -163,5 +156,6 @@ func get_dict():
 	dict.thickness = thickness
 	dict.x = position.x
 	dict.y = position.y
+	dict.queue = queue
 	
 	return dict
