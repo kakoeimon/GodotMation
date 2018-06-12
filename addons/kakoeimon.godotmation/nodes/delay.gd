@@ -87,11 +87,11 @@ func apply_satisfaction():
 			r.update_flow()
 		for s in trigger_states:
 			s.end_node.trigger()
+	pushed = false
 
 func can_push(value):
-	if value <= number + output_number:
-		return value
-	return max(0, number + output_number)
+	return number + output_number
+	
 
 
 func change_input_state(value): 
@@ -103,9 +103,6 @@ func change_input_state(value):
 
 
 func change_output_state(value):
-	
-	if value > number + output_number:
-		print(value)
 	output_number += value
 	#value is and the state change in fact so we trigger the output states with this value
 	for s in output_states:
@@ -124,19 +121,29 @@ func get_input_number():
 
 
 func apply_state():
-	if output_number or input_number:
-		number += output_number + input_number
-		
-		#if emit_state_changed: emit_signal("state_changed" , number)
-		
-		output_number = 0
-		input_number = 0
-		resources_line[interval_i] = number
+	#if output_number or input_number:
+	#number += output_number + input_number
+	
+	#if emit_state_changed: emit_signal("state_changed" , number)
+	
+	
+	if not queue:
+		resources_line[interval_i] = number + output_number + input_number
 		interval_i +=1
 		if interval_i >= resources_line.size(): interval_i = 0
 		number = resources_line[interval_i]
-		if queue and number > 1: number = 1
-	pushed = false
+	else:
+		resources_line[0] += output_number + input_number
+		interval_i +=1
+		if interval_i >= resources_line.size(): interval_i = 0
+		if interval_i == 0 and resources_line[0] > 0:
+			number = 1
+		else:
+			number = 0
+			
+	output_number = 0
+	input_number = 0
+		#if queue and number > 1: number = 1
 	satisfied = true
 	#active is setted here as true and this may change by the input_conditional_states
 	active = true

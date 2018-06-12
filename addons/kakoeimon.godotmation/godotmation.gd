@@ -26,11 +26,6 @@ var interactive_nodes = []
 var automatic_nodes = []
 var on_start_nodes = []
 
-#pushed_nodes are for not automatic nodes that have input connections 
-#with start nodes in push mode
-#it used to check satisfaction for triggers and reverse triggers
-var pushed_nodes = []
-
 var resources = []
 var states = []
 
@@ -97,11 +92,6 @@ func setup():
 				for i in range(n.output_resources[0].get_number()):
 					n.resources_line.append(0)
 					n.number = 0
-		if n.input_resources.size():
-			for r in n.input_resources:
-				if r.start_node.pull_mode > 1: #Thise means tha it is in push mode
-					pushed_nodes.append(n)
-					break
 	
 	if automatic_nodes.size(): #This is here cause I cannot set it in the edittor
 		var t = Timer.new()
@@ -126,10 +116,6 @@ func _start():
 	_interval_timeout()
 
 
-
-
-
-
 func _interval_timeout():
 	ticks +=1
 	if reverse_order:
@@ -141,7 +127,7 @@ func _interval_timeout():
 			n.trigger()
 		reverse_order = true
 	
-	for n in pushed_nodes:
+	for n in nodes:
 		if n.pushed:
 			n.apply_satisfaction()
 		

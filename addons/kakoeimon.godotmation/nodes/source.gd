@@ -28,6 +28,8 @@ var active = true
 
 var trigger_states = []
 
+var pushed = false
+
 
 #Source only triggers the output connection's end nodes to pull resources.
 func trigger():

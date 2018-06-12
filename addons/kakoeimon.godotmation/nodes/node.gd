@@ -35,6 +35,8 @@ var input_number = 0
 
 var output_number = 0
 
+var pushed = false
+
 
 func trigger():
 	if not active: return

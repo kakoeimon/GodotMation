@@ -29,6 +29,7 @@ var input_conditional_states = []
 
 export(bool) var active = true
 
+var pushed = false
 
 
 func trigger():
@@ -42,6 +43,7 @@ func pull_resources(resource):
 
 	
 func apply_satisfaction():
+	pushed = false
 	pass
 
 func can_push(value):

@@ -26,6 +26,8 @@ var active = false
 
 signal reached_condition
 
+var pushed = false
+
 #Source only pushes resources, the push mode does not matter
 func trigger():
 	pass

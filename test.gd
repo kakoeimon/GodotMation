@@ -11,7 +11,7 @@ func _ready():
 	godotmation._interval_timeout()
 	
 	var time = OS.get_ticks_msec()
-	for i in range(0,100000):
+	for i in range(0,400):
 		godotmation._interval_timeout()
 	print(OS.get_ticks_msec() - time)
 	
