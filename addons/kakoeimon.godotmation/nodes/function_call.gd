@@ -34,7 +34,7 @@ var pushed = false
 
 func trigger():
 	if not active or not caption: return
-	number = get_parent().call(caption)
+	number = get_parent().get_parent().call(caption)
 	pass
 
 

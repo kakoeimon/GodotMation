@@ -1,7 +1,19 @@
-<graph version="v4.05" name="" author="" interval="1" timeMode="asynchronous" distributionMode="fixed speed" speed="100" actions="1" dice="D6" skill="" strategy="" multiplayer="" width="600" height="560" numberOfRuns="100" visibleRuns="25" colorCoding="0">
-  <node symbol="Pool" x="461" y="170" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
-  <connection type="Resource Connection" start="3" end="2" label="" position="0.5" color="Black" thickness="2"/>
-  <node symbol="Delay" x="340" y="180" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" delayType="normal"/>
-  <node symbol="Pool" x="200" y="170" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="push any" actions="1" resourceColor="Black" startingResources="20" capacity="-1" displayCapacity="-1"/>
-  <connection type="Resource Connection" start="2" end="0" label="3" position="0.5" color="Black" thickness="2"/>
+<graph version="v4.05" name="Stopping Mechanism in Power Grid" author="Adams &amp; Dormans" interval="1" timeMode="synchronous" distributionMode="instantaneous" speed="100" actions="1" dice="D6" skill="" strategy="" multiplayer="" width="600" height="566" numberOfRuns="0" visibleRuns="0" colorCoding="1">
+  <node symbol="Pool" x="470" y="209" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <node symbol="Pool" x="448" y="310" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <connection type="Resource Connection" start="10" end="0" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="10" end="1" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="465" y="120" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <node symbol="Pool" x="341" y="360" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <connection type="Resource Connection" start="8" end="5" label="" position="0.5" color="Black" thickness="2"/>
+  <connection type="State Connection" start="10" end="5" label="*" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="200" y="352" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="push any" actions="1" resourceColor="Black" startingResources="9" capacity="-1" displayCapacity="-1"/>
+  <connection type="Resource Connection" start="10" end="4" label="2" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Delay" x="320" y="200" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="automatic" pullMode="pull any" actions="1" delayType="normal"/>
+  <connection type="Resource Connection" start="16" end="10" label="2" position="0.5" color="Black" thickness="2"/>
+  <connection type="State Connection" start="10" end="14" label="!" position="0.5" color="Black" thickness="2"/>
+  <connection type="Resource Connection" start="15" end="14" label="" position="0.5" color="Black" thickness="2"/>
+  <node symbol="Pool" x="320" y="80" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black" startingResources="0" capacity="-1"/>
+  <node symbol="Source" x="149" y="84" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="pull any" actions="1" resourceColor="Black"/>
+  <node symbol="Pool" x="169" y="208" color="Black" caption="" thickness="2" captionPos="0.25" activationMode="passive" pullMode="push any" actions="1" resourceColor="Black" startingResources="3" capacity="-1" displayCapacity="-1"/>
 </graph>

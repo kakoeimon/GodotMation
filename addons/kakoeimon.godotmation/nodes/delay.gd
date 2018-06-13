@@ -56,8 +56,8 @@ func trigger():
 	if satisfied:
 		for r in input_resources:
 			r.update_flow()
-		for s in trigger_states:
-			s.end_node.trigger()
+		#for s in trigger_states:
+		#	s.end_node.trigger()
 	for r in input_resources:
 		if not r.satisfied:
 			for s in reverse_trigger_states:

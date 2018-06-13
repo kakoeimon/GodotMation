@@ -56,4 +56,6 @@ Please create an issue if something is not clear or if you think that a future i
 
 Thanks.
 
+P.S. GodotMation is written in GDScript, there is a parallel version written in Cpp : https://github.com/kakoeimon/GodotMationCpp
+
 
