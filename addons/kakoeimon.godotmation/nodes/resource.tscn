@@ -3,19 +3,11 @@
 [ext_resource path="res://addons/kakoeimon.godotmation/nodes/resource.gd" type="Script" id=1]
 
 [node name="resource" type="Node"]
-
 script = ExtResource( 1 )
 color = null
 label = null
 end = null
 start = null
-input_resources_indices = [  ]
-output_resources_indices = [  ]
-input_states_indices = [  ]
-output_states_indices = [  ]
 points = null
-resource_type = 0
-number = 0
 thickness = null
-
 

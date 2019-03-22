@@ -1,7 +1,7 @@
 tool
 extends Node
 
-const number = preload("number/number.gd")
+#const number_gd = preload("number/number.gd")
 const number_tool = preload("number/number_tool.gd")
 
 var type = 0 #RESOURCE

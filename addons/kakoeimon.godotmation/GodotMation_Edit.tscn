@@ -17,2009 +17,627 @@
 [ext_resource path="res://addons/kakoeimon.godotmation/button_draw/FunctionCallButton.gd" type="Script" id=15]
 [ext_resource path="res://addons/kakoeimon.godotmation/DrawingArea.gd" type="Script" id=16]
 
-[node name="GodotMation_Edit" type="Control" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="GodotMation_Edit" type="Control"]
 margin_right = 1024.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 260, 600 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Rect", "Rendering" ]
 version = null
-author = ""
-interval = 1.0
 time_mode = null
 distribution_mode = null
 speed = null
 actions = null
-dice = "D6"
-skill = ""
-strategy = ""
-multiplayer_skill = ""
 width = null
 height = null
 number_of_runs = null
 visible_runs = null
-autostart = true
 
-[node name="LoadFileDialog" type="FileDialog" parent="." index="0"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LoadFileDialog" type="FileDialog" parent="."]
 margin_left = 100.0
 margin_top = 100.0
 margin_right = 600.0
 margin_bottom = 500.0
-rect_min_size = Vector2( 200, 70 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
 window_title = "Open a File"
 resizable = true
-dialog_hide_on_ok = false
-mode_overrides_title = true
 mode = 0
-access = 0
+access = 1
 filters = PoolStringArray( "*.json", "*.xml" )
-show_hidden_files = false
-current_dir = "res://"
-current_file = ""
-current_path = "res://"
-_sections_unfolded = [ "Dialog", "Hint", "Popup", "Rect" ]
+show_hidden_files = true
+current_dir = "user://home/kakoeimon/projects/godot/projects/GodotMation"
+current_path = "user://home/kakoeimon/projects/godot/projects/GodotMation/"
 
-[node name="SaveFileDialog" type="FileDialog" parent="." index="1"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SaveFileDialog" type="FileDialog" parent="."]
 margin_left = 100.0
 margin_top = 100.0
 margin_right = 600.0
 margin_bottom = 500.0
-rect_min_size = Vector2( 200, 70 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
-window_title = "Save a File"
 resizable = true
-dialog_hide_on_ok = false
-mode_overrides_title = true
-mode = 4
-access = 0
+access = 1
 filters = PoolStringArray( "*.json" )
-show_hidden_files = false
-current_dir = "res://"
-current_file = ""
-current_path = "res://"
-_sections_unfolded = [ "Dialog", "Hint", "Popup", "Rect" ]
+show_hidden_files = true
+current_dir = "user://home/kakoeimon/projects/godot/projects/GodotMation"
+current_path = "user://home/kakoeimon/projects/godot/projects/GodotMation/"
 
-[node name="Panel" type="Panel" parent="." index="2"]
-
+[node name="Panel" type="Panel" parent="."]
 anchor_left = 1.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 rect_min_size = Vector2( 260, 600 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="PlayButton" type="Button" parent="Panel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PlayButton" type="Button" parent="Panel"]
 margin_left = 15.0
 margin_top = 10.0
 margin_right = 53.0
 margin_bottom = 30.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Play"
-flat = false
-align = 1
 
-[node name="StopButton" type="Button" parent="Panel" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="StopButton" type="Button" parent="Panel"]
 margin_left = 15.0
 margin_top = 37.0
 margin_right = 55.0
 margin_bottom = 57.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Stop"
-flat = false
-align = 1
 
-[node name="LoadButton" type="Button" parent="Panel" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LoadButton" type="Button" parent="Panel"]
 margin_left = 166.0
 margin_top = 24.0
 margin_right = 208.0
 margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Load"
-flat = false
-align = 1
 
-[node name="SaveButton" type="Button" parent="Panel" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SaveButton" type="Button" parent="Panel"]
 margin_left = 80.0
 margin_top = 24.0
 margin_right = 122.0
 margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Save"
-flat = false
-align = 1
 
-[node name="DrawPanel" type="Panel" parent="Panel" index="4"]
-
+[node name="DrawPanel" type="Panel" parent="Panel"]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 3.0
 margin_top = 67.0
 margin_right = 43.0
 margin_bottom = 107.0
 rect_scale = Vector2( 0.8, 0.8 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="GridContainer" type="GridContainer" parent="Panel/DrawPanel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="GridContainer" type="GridContainer" parent="Panel/DrawPanel"]
 margin_right = 40.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 columns = 4
-_sections_unfolded = [ "Rect" ]
 
-[node name="CursorButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CursorButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_right = 76.0
 margin_bottom = 76.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
 pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 2 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="TextButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="TextButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_left = 80.0
 margin_right = 156.0
 margin_bottom = 76.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="GroupButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="GroupButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_left = 160.0
 margin_right = 236.0
 margin_bottom = 76.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 4 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="ChartButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ChartButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_left = 240.0
 margin_right = 316.0
 margin_bottom = 76.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 5 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="PoolButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PoolButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_top = 80.0
 margin_right = 76.0
 margin_bottom = 156.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 6 )
-_sections_unfolded = [ "Anchor", "Rect" ]
 
-[node name="GateButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="GateButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_left = 80.0
 margin_top = 80.0
 margin_right = 156.0
 margin_bottom = 156.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 7 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="ResourceButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ResourceButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_left = 160.0
 margin_top = 80.0
 margin_right = 236.0
 margin_bottom = 156.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 8 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="StateButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="StateButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_left = 240.0
 margin_top = 80.0
 margin_right = 316.0
 margin_bottom = 156.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 9 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="SourceButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SourceButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_top = 160.0
 margin_right = 76.0
 margin_bottom = 236.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 10 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="DrainButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="9"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="DrainButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_left = 80.0
 margin_top = 160.0
 margin_right = 156.0
 margin_bottom = 236.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 11 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="ConvertButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="10"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ConvertButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_left = 160.0
 margin_top = 160.0
 margin_right = 236.0
 margin_bottom = 236.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 12 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Delay" type="Button" parent="Panel/DrawPanel/GridContainer" index="11"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Delay" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_left = 240.0
 margin_top = 160.0
 margin_right = 316.0
 margin_bottom = 236.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 13 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="EndConditionButton" type="Button" parent="Panel/DrawPanel/GridContainer" index="12"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="EndConditionButton" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_top = 240.0
 margin_right = 76.0
 margin_bottom = 316.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 14 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="FunctionCall" type="Button" parent="Panel/DrawPanel/GridContainer" index="13"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="FunctionCall" type="Button" parent="Panel/DrawPanel/GridContainer"]
 margin_left = 80.0
 margin_top = 240.0
 margin_right = 156.0
 margin_bottom = 316.0
 rect_min_size = Vector2( 76, 76 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 1
 script = ExtResource( 15 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Delete_Button" type="Button" parent="Panel/DrawPanel" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Delete_Button" type="Button" parent="Panel/DrawPanel"]
 margin_left = 23.0
 margin_top = 586.0
 margin_right = 292.0
 margin_bottom = 654.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "DELETE_SELECTION"
-flat = false
-align = 1
 
-[node name="Nodes" type="VBoxContainer" parent="Panel" index="5"]
-
+[node name="Nodes" type="VBoxContainer" parent="Panel"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 10.0
 margin_top = 324.0
 margin_right = 50.0
 margin_bottom = 506.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_constants/separation = 26
-alignment = 0
-_sections_unfolded = [ "Grow Direction", "custom_constants" ]
 
-[node name="Caption" type="Control" parent="Panel/Nodes" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Caption" type="Control" parent="Panel/Nodes"]
 margin_right = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/Caption" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/Caption"]
 margin_right = 40.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Caption : "
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Caption_LineEdit" type="LineEdit" parent="Panel/Nodes/Caption" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Caption_LineEdit" type="LineEdit" parent="Panel/Nodes/Caption"]
 margin_left = 62.0
 margin_top = -5.0
 margin_right = 242.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Thickness" type="Control" parent="Panel/Nodes" index="1"]
-
+[node name="Thickness" type="Control" parent="Panel/Nodes"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 26.0
 margin_right = 40.0
 margin_bottom = 26.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/Thickness" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/Thickness"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Thickness : "
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="SpinBox" type="SpinBox" parent="Panel/Nodes/Thickness" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SpinBox" type="SpinBox" parent="Panel/Nodes/Thickness"]
 margin_left = 74.0
 margin_right = 148.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-editable = true
-prefix = ""
-suffix = ""
-_sections_unfolded = [ "Rect" ]
 
-[node name="Color" type="Control" parent="Panel/Nodes" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Color" type="Control" parent="Panel/Nodes"]
 margin_top = 26.0
 margin_right = 40.0
 margin_bottom = 26.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/Color" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/Color"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Color : "
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="ColorRect" type="ColorRect" parent="Panel/Nodes/Color" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ColorRect" type="ColorRect" parent="Panel/Nodes/Color"]
 margin_left = 75.0
 margin_right = 95.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0, 0, 0, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Activation" type="Control" parent="Panel/Nodes" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Activation" type="Control" parent="Panel/Nodes"]
 margin_top = 52.0
 margin_right = 40.0
 margin_bottom = 52.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/Activation" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/Activation"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Activation : "
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="ActivationMode" type="MenuButton" parent="Panel/Nodes/Activation" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ActivationMode" type="MenuButton" parent="Panel/Nodes/Activation"]
 margin_left = 84.0
 margin_right = 96.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 0
-shortcut = null
-group = null
 text = "Passive"
-flat = true
-align = 1
-items = [ "Passive", null, true, false, false, 0, 0, null, "", false, "Interactive", null, true, false, false, 1, 0, null, "", false, "Automatic", null, true, false, false, 2, 0, null, "", false, "On Start", null, true, false, false, 3, 0, null, "", false ]
+items = [ "Passive", null, 1, false, false, 0, 0, null, "", false, "Interactive", null, 1, false, false, 1, 0, null, "", false, "Automatic", null, 1, false, false, 2, 0, null, "", false, "On Start", null, 1, false, false, 3, 0, null, "", false ]
 
-[node name="Actions" type="Control" parent="Panel/Nodes" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Actions" type="Control" parent="Panel/Nodes"]
 margin_top = 78.0
 margin_right = 40.0
 margin_bottom = 78.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/Actions" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/Actions"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Actions :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="SpinBox" type="SpinBox" parent="Panel/Nodes/Actions" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SpinBox" type="SpinBox" parent="Panel/Nodes/Actions"]
 margin_left = 63.0
 margin_right = 137.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-editable = true
-prefix = ""
-suffix = ""
 
-[node name="PullMode" type="Control" parent="Panel/Nodes" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PullMode" type="Control" parent="Panel/Nodes"]
 margin_top = 104.0
 margin_right = 40.0
 margin_bottom = 104.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/PullMode" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/PullMode"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Pull Mode :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="PullMode" type="MenuButton" parent="Panel/Nodes/PullMode" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PullMode" type="MenuButton" parent="Panel/Nodes/PullMode"]
 margin_left = 76.0
 margin_right = 88.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 0
-shortcut = null
-group = null
 text = "Pull Any"
-flat = true
-align = 1
-items = [ "Pull Any", null, true, false, false, 0, 0, null, "", false, "Pull All", null, true, false, false, 1, 0, null, "", false, "Push Any", null, true, false, false, 2, 0, null, "", false, "Push All", null, true, false, false, 3, 0, null, "", false ]
+items = [ "Pull Any", null, 1, false, false, 0, 0, null, "", false, "Pull All", null, 1, false, false, 1, 0, null, "", false, "Push Any", null, 1, false, false, 2, 0, null, "", false, "Push All", null, 1, false, false, 3, 0, null, "", false ]
 
-[node name="Number" type="Control" parent="Panel/Nodes" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Number" type="Control" parent="Panel/Nodes"]
 margin_top = 130.0
 margin_right = 40.0
 margin_bottom = 130.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/Number" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/Number"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Number :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Number_SpinBox" type="SpinBox" parent="Panel/Nodes/Number" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Number_SpinBox" type="SpinBox" parent="Panel/Nodes/Number"]
 margin_left = 69.0
 margin_right = 143.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
 max_value = 1.67772e+07
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-editable = true
-prefix = ""
-suffix = ""
 
-[node name="Capacity" type="Control" parent="Panel/Nodes" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Capacity" type="Control" parent="Panel/Nodes"]
 margin_top = 156.0
 margin_right = 40.0
 margin_bottom = 156.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/Capacity" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/Capacity"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Capacity :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="SpinBox" type="SpinBox" parent="Panel/Nodes/Capacity" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SpinBox" type="SpinBox" parent="Panel/Nodes/Capacity"]
 margin_left = 69.0
 margin_right = 143.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 min_value = -1.0
 max_value = 999999.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-editable = true
-prefix = ""
-suffix = ""
 
-[node name="Pool_Signal" type="Control" parent="Panel/Nodes" index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Pool_Signal" type="Control" parent="Panel/Nodes"]
 margin_top = 182.0
 margin_right = 40.0
 margin_bottom = 182.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/Pool_Signal" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/Pool_Signal"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Emit Signal :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Pool_Signal_CheckBox" type="CheckBox" parent="Panel/Nodes/Pool_Signal" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Pool_Signal_CheckBox" type="CheckBox" parent="Panel/Nodes/Pool_Signal"]
 margin_left = 80.0
 margin_right = 104.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 0
 
-[node name="GateType" type="Control" parent="Panel/Nodes" index="9"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="GateType" type="Control" parent="Panel/Nodes"]
 margin_top = 208.0
 margin_right = 40.0
 margin_bottom = 208.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/GateType" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/GateType"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Gate Type :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="GateType" type="MenuButton" parent="Panel/Nodes/GateType" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="GateType" type="MenuButton" parent="Panel/Nodes/GateType"]
 margin_left = 84.0
 margin_right = 96.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 0
-shortcut = null
-group = null
 text = "Deterministic"
-flat = true
-align = 1
-items = [ "Deterministic", null, true, false, false, 0, 0, null, "", false, "Dice-Random", null, true, false, false, 1, 0, null, "", false, "Skill", null, true, false, false, 2, 0, null, "", false, "Multiplayer", null, true, false, false, 3, 0, null, "", false, "Strategy", null, true, false, false, 4, 0, null, "", false ]
+items = [ "Deterministic", null, 1, false, false, 0, 0, null, "", false, "Dice-Random", null, 1, false, false, 1, 0, null, "", false, "Skill", null, 1, false, false, 2, 0, null, "", false, "Multiplayer", null, 1, false, false, 3, 0, null, "", false, "Strategy", null, 1, false, false, 4, 0, null, "", false ]
 
-[node name="Queue" type="Control" parent="Panel/Nodes" index="10"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Queue" type="Control" parent="Panel/Nodes"]
 margin_top = 234.0
 margin_right = 40.0
 margin_bottom = 234.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/Queue" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/Queue"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Queue :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Queue_CheckBox" type="CheckBox" parent="Panel/Nodes/Queue" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Queue_CheckBox" type="CheckBox" parent="Panel/Nodes/Queue"]
 margin_left = 59.0
 margin_right = 83.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 0
 
-[node name="Signaller" type="Control" parent="Panel/Nodes" index="11"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Signaller" type="Control" parent="Panel/Nodes"]
 margin_top = 260.0
 margin_right = 40.0
 margin_bottom = 260.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Nodes/Signaller" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Nodes/Signaller"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Signaller :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Signaller_CheckBox" type="CheckBox" parent="Panel/Nodes/Signaller" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Signaller_CheckBox" type="CheckBox" parent="Panel/Nodes/Signaller"]
 margin_left = 59.0
 margin_right = 83.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 0
 
-[node name="Connections" type="VBoxContainer" parent="Panel" index="6"]
-
+[node name="Connections" type="VBoxContainer" parent="Panel"]
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 10.0
 margin_top = 324.0
 margin_right = 50.0
 margin_bottom = 506.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_constants/separation = 26
-alignment = 0
 
-[node name="Label" type="Control" parent="Panel/Connections" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Control" parent="Panel/Connections"]
 margin_right = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Connections/Label" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Connections/Label"]
 margin_top = -1.0
 margin_right = 40.0
 margin_bottom = 13.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Label : "
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Label_LineEdit" type="LineEdit" parent="Panel/Connections/Label" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label_LineEdit" type="LineEdit" parent="Panel/Connections/Label"]
 margin_left = 59.0
 margin_top = -7.0
 margin_right = 117.0
 margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
 
-[node name="Main" type="VBoxContainer" parent="Panel" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Main" type="VBoxContainer" parent="Panel"]
 margin_left = 10.0
 margin_top = 324.0
 margin_right = 50.0
 margin_bottom = 506.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_constants/separation = 26
-alignment = 0
 
-[node name="Author" type="Control" parent="Panel/Main" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Author" type="Control" parent="Panel/Main"]
 margin_right = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Label" type="Label" parent="Panel/Main/Author" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Main/Author"]
 margin_top = -1.0
 margin_right = 40.0
 margin_bottom = 13.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Author :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Author_LineEdit" type="LineEdit" parent="Panel/Main/Author" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Author_LineEdit" type="LineEdit" parent="Panel/Main/Author"]
 margin_left = 59.0
 margin_top = -7.0
 margin_right = 117.0
 margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
 
-[node name="Interval" type="Control" parent="Panel/Main" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Interval" type="Control" parent="Panel/Main"]
 margin_top = 26.0
 margin_right = 40.0
 margin_bottom = 26.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Main/Interval" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Main/Interval"]
 margin_top = -1.0
 margin_right = 57.0
 margin_bottom = 13.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Interval :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Interval_SpinBox" type="SpinBox" parent="Panel/Main/Interval/Label" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Interval_SpinBox" type="SpinBox" parent="Panel/Main/Interval/Label"]
 margin_left = 59.0
 margin_top = -6.0
 margin_right = 133.0
 margin_bottom = 18.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 min_value = 0.016
-max_value = 100.0
 step = 0.1
-page = 0.0
 value = 1.0
-exp_edit = false
-rounded = false
-editable = true
-prefix = ""
-suffix = ""
 
-[node name="Dice" type="Control" parent="Panel/Main" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Dice" type="Control" parent="Panel/Main"]
 margin_top = 52.0
 margin_right = 40.0
 margin_bottom = 52.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Main/Dice" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Main/Dice"]
 margin_top = -1.0
 margin_right = 40.0
 margin_bottom = 13.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Dice :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Dice_LineEdit" type="LineEdit" parent="Panel/Main/Dice" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Dice_LineEdit" type="LineEdit" parent="Panel/Main/Dice"]
 margin_left = 59.0
 margin_top = -7.0
 margin_right = 117.0
 margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
 text = "D6"
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
 
-[node name="Skill" type="Control" parent="Panel/Main" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Skill" type="Control" parent="Panel/Main"]
 margin_top = 78.0
 margin_right = 40.0
 margin_bottom = 78.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Main/Skill" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Main/Skill"]
 margin_top = -1.0
 margin_right = 40.0
 margin_bottom = 13.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Skill :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Skill_LineEdit" type="LineEdit" parent="Panel/Main/Skill" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Skill_LineEdit" type="LineEdit" parent="Panel/Main/Skill"]
 margin_left = 59.0
 margin_top = -7.0
 margin_right = 117.0
 margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
 
-[node name="Multiplayer" type="Control" parent="Panel/Main" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Multiplayer" type="Control" parent="Panel/Main"]
 margin_top = 104.0
 margin_right = 40.0
 margin_bottom = 104.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Main/Multiplayer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Main/Multiplayer"]
 margin_top = -1.0
 margin_right = 40.0
 margin_bottom = 13.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Multiplayer:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Multiplayer_LineEdit" type="LineEdit" parent="Panel/Main/Multiplayer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Multiplayer_LineEdit" type="LineEdit" parent="Panel/Main/Multiplayer"]
 margin_left = 79.4338
 margin_top = -7.0
 margin_right = 137.434
 margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
 
-[node name="Strategy" type="Control" parent="Panel/Main" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Strategy" type="Control" parent="Panel/Main"]
 margin_top = 130.0
 margin_right = 40.0
 margin_bottom = 130.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Main/Strategy" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Main/Strategy"]
 margin_top = -1.0
 margin_right = 40.0
 margin_bottom = 13.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Strategy :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Strategy_LineEdit" type="LineEdit" parent="Panel/Main/Strategy" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Strategy_LineEdit" type="LineEdit" parent="Panel/Main/Strategy"]
 margin_left = 61.384
 margin_top = -7.0
 margin_right = 119.384
 margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
 
-[node name="AutoStart" type="Control" parent="Panel/Main" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="AutoStart" type="Control" parent="Panel/Main"]
 margin_top = 156.0
 margin_right = 40.0
 margin_bottom = 156.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Panel/Main/AutoStart" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Panel/Main/AutoStart"]
 margin_top = 5.0
 margin_right = 71.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Auto Start :"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="AutoStart_CheckBox" type="CheckBox" parent="Panel/Main/AutoStart" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="AutoStart_CheckBox" type="CheckBox" parent="Panel/Main/AutoStart"]
 margin_left = 70.0
 margin_right = 157.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
 pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 0
-_sections_unfolded = [ "Grow Direction" ]
 
-[node name="DrawingArea" type="Control" parent="." index="3"]
-
+[node name="DrawingArea" type="Control" parent="."]
 editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
 anchor_bottom = 1.0
 margin_left = 2.10529
 margin_top = -1.05261
 margin_right = 766.105
 margin_bottom = -1.05261
 rect_min_size = Vector2( 0, 600 )
-rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 16 )
-_sections_unfolded = [ "Grow Direction", "Margin", "Mouse", "Rect", "Scroll", "Size Flags" ]
 
-[node name="Nodes" type="Node2D" parent="DrawingArea" index="0"]
+[node name="Nodes" type="Node2D" parent="DrawingArea"]
 
-_sections_unfolded = [ "Mouse", "Rect", "Size Flags", "Transform" ]
-
-[node name="play_godotmation" type="Node" parent="." index="4"]
+[node name="play_godotmation" type="Node" parent="."]
 
 [connection signal="file_selected" from="LoadFileDialog" to="." method="_on_LoadFileDialog_file_selected"]
-
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
-
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_PlayButton_pressed"]
-
 [connection signal="pressed" from="Panel/StopButton" to="." method="_on_StopButton_pressed"]
-
 [connection signal="pressed" from="Panel/LoadButton" to="." method="_on_LoadButton_pressed"]
-
 [connection signal="pressed" from="Panel/SaveButton" to="." method="_on_SaveButton_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/CursorButton" to="DrawingArea" method="_on_CursorButton_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/PoolButton" to="DrawingArea" method="_on_PoolButton_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/GateButton" to="DrawingArea" method="_on_GateButton_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/ResourceButton" to="DrawingArea" method="_on_ResourceButton_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/StateButton" to="DrawingArea" method="_on_StateButton_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/SourceButton" to="DrawingArea" method="_on_SourceButton_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/DrainButton" to="DrawingArea" method="_on_DrainButton_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/ConvertButton" to="DrawingArea" method="_on_ConvertButton_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/Delay" to="DrawingArea" method="_on_Delay_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/EndConditionButton" to="DrawingArea" method="_on_EndConditionButton_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/GridContainer/FunctionCall" to="DrawingArea" method="_on_FunctionCall_pressed"]
-
 [connection signal="pressed" from="Panel/DrawPanel/Delete_Button" to="DrawingArea" method="_on_Delete_Button_pressed"]
-
 [connection signal="text_entered" from="Panel/Nodes/Caption/Caption_LineEdit" to="." method="_on_Caption_LineEdit_text_entered"]
-
 [connection signal="value_changed" from="Panel/Nodes/Number/Number_SpinBox" to="." method="_on_Number_SpinBox_value_changed"]
-
 [connection signal="toggled" from="Panel/Nodes/Pool_Signal/Pool_Signal_CheckBox" to="." method="_on_Pool_Signal_CheckBox_toggled"]
-
 [connection signal="toggled" from="Panel/Nodes/Queue/Queue_CheckBox" to="." method="_on_Queue_CheckBox_toggled"]
-
 [connection signal="toggled" from="Panel/Nodes/Signaller/Signaller_CheckBox" to="." method="_on_Signaller_CheckBox_toggled"]
-
 [connection signal="text_changed" from="Panel/Connections/Label/Label_LineEdit" to="." method="_on_Label_LineEdit_text_changed"]
-
 [connection signal="text_changed" from="Panel/Main/Author/Author_LineEdit" to="." method="_on_Author_LineEdit_text_changed"]
-
 [connection signal="value_changed" from="Panel/Main/Interval/Label/Interval_SpinBox" to="." method="_on_Interval_SpinBox_value_changed"]
-
 [connection signal="text_changed" from="Panel/Main/Dice/Dice_LineEdit" to="." method="_on_Dice_LineEdit_text_changed"]
-
 [connection signal="text_changed" from="Panel/Main/Skill/Skill_LineEdit" to="." method="_on_Skill_LineEdit_text_changed"]
-
 [connection signal="text_changed" from="Panel/Main/Multiplayer/Multiplayer_LineEdit" to="." method="_on_Multiplayer_LineEdit_text_changed"]
-
 [connection signal="text_changed" from="Panel/Main/Strategy/Strategy_LineEdit" to="." method="_on_Strategy_LineEdit_text_changed"]
-
 [connection signal="toggled" from="Panel/Main/AutoStart/AutoStart_CheckBox" to="." method="_on_AutoStart_CheckBox_toggled"]
-
 [connection signal="gui_input" from="DrawingArea" to="DrawingArea" method="_on_DrawingArea_gui_input"]
-
-
